@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Action Plan | Career CoPilot</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="background">
+      <span class="orb orb-a"></span>
+      <span class="orb orb-b"></span>
+      <span class="orb orb-c"></span>
+      <span class="grid-overlay"></span>
+    </div>
+
+    <main class="page-shell">
+      <nav class="quick-nav glass" aria-label="Primary">
+        <a class="quick-link" href="/">Audit</a>
+        <a class="quick-link" href="/career-gps" data-requires-audit="true">Career GPS</a>
+        <a class="quick-link is-active" href="/action-plan" aria-current="page" data-requires-audit="true">Action Plan</a>
+        <a class="quick-link" href="/execution-tracker" data-requires-audit="true">Execution Tracker</a>
+      </nav>
+
+      <section class="glass panel">
+        <div class="page-header">
+          <h1>Detailed Action Plan</h1>
+          <a class="back-link" href="/">Back to Audit</a>
+        </div>
+        <p class="section-copy">This page shows your full personalized execution plan.</p>
+        <div id="actionPlanPageContent"></div>
+      </section>
+    </main>
+
+    <script src="/static/nav-state.js"></script>
+    <script src="/static/action-plan.js"></script>
+  </body>
+</html>
