@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career GPS | Career CoPilot</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="background">
+      <span class="orb orb-a"></span>
+      <span class="orb orb-b"></span>
+      <span class="orb orb-c"></span>
+      <span class="grid-overlay"></span>
+    </div>
+
+    <main class="page-shell">
+      <nav class="quick-nav glass" aria-label="Primary">
+        <a class="quick-link" href="/">Audit</a>
+        <a class="quick-link is-active" href="/career-gps" aria-current="page" data-requires-audit="true">Career GPS</a>
+        <a class="quick-link" href="/action-plan" data-requires-audit="true">Action Plan</a>
+        <a class="quick-link" href="/execution-tracker" data-requires-audit="true">Execution Tracker</a>
+      </nav>
+
+      <section class="glass panel">
+        <div class="page-header">
+          <h1>Career GPS</h1>
+          <a class="back-link" href="/">Back to Audit</a>
+        </div>
+        <p class="section-copy">Live trajectory intelligence with probability score and time-to-achieve estimate.</p>
+
+        <div class="gps-targets">
+          <button class="gps-target-btn is-active" type="button" data-target="staff engineer">Staff Engineer</button>
+          <button class="gps-target-btn" type="button" data-target="engineering manager">Engineering Manager</button>
+          <button class="gps-target-btn" type="button" data-target="faang engineer">FAANG Engineer</button>
+        </div>
+
+        <div class="gps-simulations">
+          <label class="gps-toggle">
+            <input id="simBackendShift" type="checkbox" />
+            <span>What if I switch to backend-heavy ownership?</span>
+          </label>
+          <label class="gps-toggle">
+            <input id="simLeadership" type="checkbox" />
+            <span>What if I lead a cross-team initiative?</span>
+          </label>
+          <label class="gps-toggle">
+            <input id="simFaangPrep" type="checkbox" />
+            <span>What if I run focused FAANG prep?</span>
+          </label>
+        </div>
+
+        <p id="gpsStatus" class="status"></p>
+        <div id="gpsComparisonContent"></div>
+      </section>
+    </main>
+
+    <script src="/static/nav-state.js"></script>
+    <script src="/static/career-gps.js"></script>
+  </body>
+</html>

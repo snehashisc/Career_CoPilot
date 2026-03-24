@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career CoPilot MVP</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="background">
+      <span class="orb orb-a"></span>
+      <span class="orb orb-b"></span>
+      <span class="orb orb-c"></span>
+      <span class="grid-overlay"></span>
+    </div>
+
+    <main class="shell">
+      <header class="hero glass">
+        <div>
+          <p class="eyebrow">AI Career Intelligence</p>
+          <h1>Career CoPilot</h1>
+          <p class="hero-copy">
+            Upload your profile and get a data-backed audit with salary benchmark,
+            risk signals, and an execution-grade action plan.
+          </p>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-pill">
+            <span>Benchmark Engine</span>
+            <strong>Role + Experience</strong>
+          </div>
+          <div class="stat-pill">
+            <span>Output Depth</span>
+            <strong>Readiness + Timeline</strong>
+          </div>
+        </div>
+      </header>
+
+      <nav class="quick-nav glass" aria-label="Primary">
+        <a class="quick-link is-active" href="/" aria-current="page">Audit</a>
+        <a class="quick-link" href="/career-gps" data-requires-audit="true">Career GPS</a>
+        <a class="quick-link" href="/action-plan" data-requires-audit="true">Action Plan</a>
+        <a class="quick-link" href="/execution-tracker" data-requires-audit="true">Execution Tracker</a>
+      </nav>
+
+      <section class="layout">
+        <aside class="left-rail">
+          <section class="glass panel">
+            <h2>New Audit</h2>
+            <p class="section-copy">Start with your latest resume and role goals.</p>
+            <form id="auditForm">
+              <label for="resume">Resume</label>
+              <input id="resume" name="resume" type="file" class="file-input-native" required />
+              <label for="resume" class="file-input-custom">
+                <span class="file-input-icon">+</span>
+                <span class="file-input-text">Upload resume</span>
+                <span id="fileNameDisplay" class="file-name">No file selected</span>
+              </label>
+
+              <label for="current_salary_lpa">Current Salary (LPA)</label>
+              <input
+                id="current_salary_lpa"
+                name="current_salary_lpa"
+                type="number"
+                step="0.1"
+                min="2"
+                max="500"
+                placeholder="e.g. 24"
+                required
+              />
+              <p class="field-help">Current salary is required. Enter value in LPA (2 to 500).</p>
+
+              <label for="years_experience">Years of Experience (optional)</label>
+              <input
+                id="years_experience"
+                name="years_experience"
+                type="number"
+                step="0.5"
+                min="0"
+                max="30"
+                placeholder="e.g. 8"
+              />
+              <p class="field-help">
+                Leave blank to auto-infer from resume. Provide if inference is incorrect.
+              </p>
+
+              <label for="target_role">Target Role (optional)</label>
+              <input
+                id="target_role"
+                name="target_role"
+                type="text"
+                placeholder="e.g. Senior Software Engineer"
+              />
+
+              <button id="submitBtn" type="submit">
+                <span id="submitBtnText">Generate Audit</span>
+                <span id="submitBtnSpinner" class="btn-spinner hidden" aria-hidden="true"></span>
+              </button>
+            </form>
+
+            <p id="statusMessage" class="status"></p>
+          </section>
+
+          <section class="glass panel">
+            <h2>Recent Audits</h2>
+            <div id="recentAuditsContent"></div>
+          </section>
+        </aside>
+
+        <section class="right-stage">
+          <section class="glass panel">
+            <section id="reportSection" class="hidden">
+              <h2>Career Audit Report</h2>
+              <div id="reportContent"></div>
+            </section>
+
+            <section id="emptyState" class="empty-state">
+              <h2>Your analysis appears here</h2>
+              <p>
+                Generate your first audit to see salary gap intelligence, risk map,
+                and a role-specific action roadmap.
+              </p>
+            </section>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <div id="snackbar" class="snackbar" role="status" aria-live="polite"></div>
+
+    <script src="/static/nav-state.js"></script>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
